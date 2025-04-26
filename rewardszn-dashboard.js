@@ -1120,6 +1120,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (isFreePlan && !isEmailVerified) {
     // User is on free plan and has NOT verified their email
    document.getElementById("hide-if-not-verified").style.display = "none";
+   document.getElementById("hide-if-not-verified-tabs").style.display = "none";
    document.getElementById("verify-email-block").style.display = "flex"; // or show a modal/gate
   }
   // Otherwise, allow access
