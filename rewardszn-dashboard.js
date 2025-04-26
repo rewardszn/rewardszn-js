@@ -1103,3 +1103,24 @@ function enableScrollLock() {
       console.error("Error in RewardSZN state + subscription check:", error);
     }        
   });
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const memberData = await window.$memberstackDom.getCurrentMember();
+  
+  if (!memberData) return;
+
+  const user = memberData.data;
+  const isEmailVerified = user.emailVerified;
+  const userPlans = user.planConnections || [];
+
+  const isFreePlan = userPlans.some(plan => 
+    plan.planId === "pln_free-account-evqe0etk" && plan.status === "ACTIVE"
+  );
+
+  if (isFreePlan && !isEmailVerified) {
+    // User is on free plan and has NOT verified their email
+   document.getElementById("hide-if-not-verified").style.display = "none";
+   document.getElementById("verify-email-block").style.display = "flex"; // or show a modal/gate
+  }
+  // Otherwise, allow access
+});
