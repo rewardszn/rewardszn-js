@@ -115,6 +115,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		  if (planHtml && document.getElementById("1-off-container")) {
 		    const planContainer = document.createElement("div");
 		    planContainer.innerHTML = planHtml;
+			if (multiplier === 5) {
+			  const badge = document.createElement("div");
+			  badge.innerText = "5x";
+			  badge.className = "plan-badge-5x";
+			  planContainer.style.position = "relative";
+			  planContainer.appendChild(badge);
+			}
+  
 		    document.getElementById("1-off-container").prepend(planContainer);
 		  }
 		
