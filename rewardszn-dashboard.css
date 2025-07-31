@@ -1,0 +1,173 @@
+.scroll-locked {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+.scanning-text {
+    position: relative;
+    font-weight: 600;
+    display: inline-block;
+    background: linear-gradient(90deg, #999, #fff, #999);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shimmer 2s infinite linear;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+    will-change: opacity; /* performance hint */
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+@keyframes slideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+}
+
+.modal-inner.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-inner.slide-down {
+  animation: slideDown 0.3s ease-in forwards;
+}
+
+.div-block-152.active-filter * {
+  color: #010C1D !important;
+}
+.div-block-143 {
+  transition: color 0.3s ease;
+}
+.sale-type-filter {
+  background-color: #1b2534;
+  transition: background-color 0.3s ease;
+}
+.sale-type-filter.active-sale-type {
+  background-color: #dfdfdf;
+  transition: background-color 0.3s ease;
+  color: #010C1D;
+}
+.div-block-152 {
+  background-color: #1b2534;
+  transition: background-color 0.3s ease;
+}
+.div-block-152.active-filter {
+  background-color: #dfdfdf;
+  transition: background-color 0.3s ease;
+  color: #010C1D;
+}
+/* Smooth transition for star fill */
+.div-block-144 svg path {
+  transition: fill 0.3s ease;
+}
+
+/* When favourites toggle is active */
+.div-block-144.favourites-active svg path {
+  fill: #010C1D;
+}
+.div-block-144 {
+  background-color: #1b2534;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.div-block-144.favourites-active {
+  background-color: #dfdfdf;
+}
+.store-star-modal.favourited .star-grey {
+  display: none;
+}
+
+.store-star-modal.favourited .star-yellow {
+  display: block;
+}
+.text-2-line-limit {
+	display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits text to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ms-inspector-badge {
+  display: none !important;
+}
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+.plan-item {
+	height: 40px;
+  width: 40px;
+  border-radius: 7px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.4));
+  box-shadow: 5px 5px 10px rgb(1 12 29 / 45%), -5px -5px 10px rgb(1 12 29 / 40%);
+}
+.nickel {
+	background-image: linear-gradient(171deg, #b5b5b5, #464646 47%, #464646);
+}
+.bronze {
+	background-image: linear-gradient(171deg, #e6c09c, #c2854b75 47%, #c2854b);
+}
+.silver {
+	background-image: linear-gradient(139deg, #717f8b 40%, #ffffffba 72%, #717f8b 85%);
+}
+.gold {
+	background-image: linear-gradient(153deg, #e4ceab 17%, #d09c1dd4 54%, #fdc674 91%);
+}
+.diamond {
+	background-image: linear-gradient(143deg, #d2d2d26b 38%, #ffffff3d 42%, #0000001a 42%), url("https://cdn.prod.website-files.com/65c8a5f72d172f3d89d13bfa/66e4fb4092d51006e775745a_diamond2.jpg")
+}
+.basic {
+	background-image:linear-gradient(171deg, #b5b5b5, #464646 100%, #464646);
+}
+.plus {
+	background-image:linear-gradient(171deg, #00a3ff, #0038ff 100%, #0038ff);
+}
+.premium {
+	background-image:linear-gradient(171deg, #e9a434, #b1780e 100%, #d2811c);
+}
+.ultimate {
+	background-image:linear-gradient(171deg, #d7285e, #b1155a 100%, #94119f);
+}
+.store-star {
+    cursor: pointer;
+}
+
+.star-yellow {
+    display: none; /* Initially hidden */
+}
+
+.store-star.favourited .star-grey {
+    display: none; /* Hide grey star when favourited */
+}
+
+.store-star.favourited .star-yellow {
+    display: inline; /* Show yellow star when favourited */
+}
