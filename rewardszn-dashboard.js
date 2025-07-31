@@ -90,20 +90,36 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 const purchaseDate = new Date(purchase.timestamp);
                 console.log("Processing ONETIME purchase:", purchase.planId, "Date:", purchaseDate);
 
-                // Only include ONETIME purchases made between 7:00 PM on Sept 11 and 6:59 PM on Sept 18
-                if (purchaseDate >= windowStartDate && purchaseDate <= windowEndDate) {
-                    console.log("ONETIME purchase is within window:", purchase.planId);
-                    const planHtml = htmlForPlanId[purchase.planId];
-                    const planValue = planValueMap[purchase.planId] || 0; // Get the plan value or default to 0
-                    if (planHtml && document.getElementById("1-off-container")) {
-                        const planContainer = document.createElement("div");
-                        planContainer.innerHTML = planHtml;
-                        document.getElementById("1-off-container").prepend(planContainer); // Prepend the plan
-
-                        // Add the plan's value to the total
-                        totalOneTimeValue += planValue;
-                    }
-                } else {
+                // Only include ONETIME purchases made between 7:00 PM on DATE and 6:59 PM on DATE
+		if (purchaseDate >= windowStartDate && purchaseDate <= windowEndDate) {
+		  console.log("ONETIME purchase is within window:", purchase.planId);
+		  const planHtml = htmlForPlanId[purchase.planId];
+		  const planValue = planValueMap[purchase.planId] || 0;
+		
+		  // 🔁 Check if it qualifies for 5X early bird
+		  let multiplier = 1;
+		  if (
+		    typeof earlyBirdStart !== 'undefined' &&
+		    typeof earlyBirdEnd !== 'undefined' &&
+		    earlyBirdStart instanceof Date &&
+		    earlyBirdEnd instanceof Date &&
+		    !isNaN(earlyBirdStart) &&
+		    !isNaN(earlyBirdEnd)
+		  ) {
+		    if (purchaseDate >= earlyBirdStart && purchaseDate <= earlyBirdEnd) {
+		      multiplier = 5;
+		      console.log(`Early bird 5X applied to ${purchase.planId}`);
+		    }
+		  }
+		
+		  if (planHtml && document.getElementById("1-off-container")) {
+		    const planContainer = document.createElement("div");
+		    planContainer.innerHTML = planHtml;
+		    document.getElementById("1-off-container").prepend(planContainer);
+		  }
+		
+		  totalOneTimeValue += planValue * multiplier;
+		} else {
                     console.log("ONETIME purchase is outside window:", purchase.planId);
                 }
             });
