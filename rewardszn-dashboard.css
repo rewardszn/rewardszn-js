@@ -173,11 +173,10 @@ body.no-scroll {
 }
 .plan-badge-5x {
   position: absolute;
-  bottom: -12px;
-  left: 8px;
-  font-size: 16px;
-  font-weight: bold;
+  bottom: -6px;
+  left: -2px;
+  font-size: 15px;
+  font-weight: 900;
   color: #FFD700;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
-  font-family: Inter, sans-serif;
+  text-shadow: 0 0px 4px rgba(0, 0, 0, 0.8);
 }
