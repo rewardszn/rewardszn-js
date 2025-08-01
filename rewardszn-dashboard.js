@@ -133,29 +133,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
             });
         }
 
-	// ✅ Highlight the 1-off container if we're in the early bird window
-	// const oneOffContainer = document.getElementById("1-off-container");
-
-	// if (
-	//   typeof earlyBirdStart !== 'undefined' &&
-	//   typeof earlyBirdEnd !== 'undefined' &&
-	//   earlyBirdStart instanceof Date &&
-	//   earlyBirdEnd instanceof Date &&
-	//   !isNaN(earlyBirdStart) &&
-	//   !isNaN(earlyBirdEnd) &&
-	//   oneOffContainer
-	// ) {
-	//   const now = new Date();
-	//   if (now >= earlyBirdStart && now <= earlyBirdEnd) {
-	//     oneOffContainer.style.border = "1px solid #FFF89B";
-	//     oneOffContainer.style.boxShadow = "0px 0px 15px 10px rgba(249, 255, 84, 0.25)";
-	//   } else {
-	//     oneOffContainer.style.border = "";
-	//     oneOffContainer.style.boxShadow = "";
-	//   }
-	// }
-
-
         // Update the total 1-time entries in the span with ID "1-off-entry" (check if the element exists)
         const oneOffEntryElement = document.getElementById("1-off-entry");
         if (oneOffEntryElement) {
