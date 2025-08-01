@@ -135,6 +135,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 	// ✅ Highlight the 1-off container if we're in the early bird window
 	const oneOffContainer = document.getElementById("1-off-container-card");
+	const entriesActivated = document.getElementById("5x-entries-activated");
 
 	if (
 	  typeof earlyBirdStart !== 'undefined' &&
@@ -149,9 +150,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	  if (now >= earlyBirdStart && now <= earlyBirdEnd) {
 	    oneOffContainer.style.border = "1px solid #FFF89B";
 	    oneOffContainer.style.boxShadow = "0px 0px 15px 10px rgba(249, 255, 84, 0.25)";
+	    entriesActivated.style.display = "flex"; 
 	  } else {
 	    oneOffContainer.style.border = "";
 	    oneOffContainer.style.boxShadow = "";
+	    entriesActivated.style.display = "none";
 	  }
 	}
 
