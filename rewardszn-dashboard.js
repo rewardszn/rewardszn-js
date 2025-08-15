@@ -40,7 +40,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
         'pln_basic-plan-t16v0tq1': '<div class="plan-item basic">Ba</div>',
         'pln_plus-plan-4u8i0qu5': '<div class="plan-item plus">Pl</div>',
         'pln_premium-plan-g96w0t1t': '<div class="plan-item premium">Pr</div>',
-        'pln_ultimate-plan-v46x0thq': '<div class="plan-item ultimate">Ul</div>'
+        'pln_ultimate-plan-v46x0thq': '<div class="plan-item ultimate">Ul</div>',
+
+		// Monthly subscription plans (show the same badges as weekly)
+		'pln_basic-monthly--uq1780i1e':    '<div class="plan-item basic">Ba</div>',
+		'pln_plus-monthly--6g1790icx':     '<div class="plan-item plus">Pl</div>',
+		'pln_premium-monthly--vb19u0lld':  '<div class="plan-item premium">Pr</div>',
+		'pln_ultimate-monthly--cu19q0no8': '<div class="plan-item ultimate">Ul</div>',
     };
 
     // Define a map of planId to their respective values (only for ONETIME plans)
@@ -1105,11 +1111,17 @@ function enableScrollLock() {
 }
   
   const rewardsznSubscriptionPlans = {
-    'pln_basic-plan-t16v0tq1': 'Basic',
-    'pln_plus-plan-4u8i0qu5': 'Plus',
-    'pln_premium-plan-g96w0t1t': 'Premium',
-    'pln_ultimate-plan-v46x0thq': 'Ultimate'
-  };
+  // Weekly
+  'pln_basic-plan-t16v0tq1': 'Basic',
+  'pln_plus-plan-4u8i0qu5': 'Plus',
+  'pln_premium-plan-g96w0t1t': 'Premium',
+  'pln_ultimate-plan-v46x0thq': 'Ultimate',
+  // Monthly
+  'pln_basic-monthly--uq1780i1e':    'Basic',
+  'pln_plus-monthly--6g1790icx':     'Plus',
+  'pln_premium-monthly--vb19u0lld':  'Premium',
+  'pln_ultimate-monthly--cu19q0no8': 'Ultimate'
+};
 
   document.addEventListener("DOMContentLoaded", async () => {
     try {
