@@ -104,6 +104,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		
 		  // 🔁 Check if it qualifies for 5X early bird
 		  let multiplier = 1;
+
+		  // ---- 5× window ----
 		  if (
 		    typeof earlyBirdStart !== 'undefined' &&
 		    typeof earlyBirdEnd !== 'undefined' &&
@@ -117,6 +119,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		      console.log(`Early bird 5X applied to ${purchase.planId}`);
 		    }
 		  }
+
+		  // ---- 2× window ----
+		  if (
+		    typeof earlyBirdStart2 !== 'undefined' &&
+		    typeof earlyBirdEnd2 !== 'undefined' &&
+		    earlyBirdStart2 instanceof Date &&
+		    earlyBirdEnd2 instanceof Date &&
+		    !isNaN(earlyBirdStart2) &&
+		    !isNaN(earlyBirdEnd2)
+		  ) {
+		    if (purchaseDate >= earlyBirdStart2 && purchaseDate <= earlyBirdEnd2) {
+		      multiplier = 2;
+		      console.log(`Early bird 5X applied to ${purchase.planId}`);
+		    }
+		  }
 		
 		  if (planHtml && document.getElementById("1-off-container")) {
 		    const planContainer = document.createElement("div");
@@ -125,6 +142,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			  const badge = document.createElement("div");
 			  badge.innerText = "5x";
 			  badge.className = "plan-badge-5x";
+			  planContainer.style.position = "relative";
+			  planContainer.appendChild(badge);
+			}
+			if (multiplier === 2) {
+			  const badge = document.createElement("div");
+			  badge.innerText = "2x";
+			  badge.className = "plan-badge-2x";
 			  planContainer.style.position = "relative";
 			  planContainer.appendChild(badge);
 			}
