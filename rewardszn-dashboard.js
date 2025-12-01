@@ -201,7 +201,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	  oneOffContainer
 	) {
 	  const now = new Date();
-	  if (now >= earlyBirdStart && now <= earlyBirdEnd) {
+	  if (now >= earlyBirdStart2 && now <= earlyBirdEnd2) {
 	    oneOffContainer.style.border = "1px solid #FFF89B";
 	    oneOffContainer.style.boxShadow = "0px 0px 15px 10px rgba(249, 255, 84, 0.25)";
 	    entriesActivated2.style.display = "flex"; 
