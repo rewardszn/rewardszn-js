@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		  ) {
 		    if (purchaseDate >= earlyBirdStart2 && purchaseDate <= earlyBirdEnd2) {
 		      multiplier = 2;
-		      console.log(`Early bird 5X applied to ${purchase.planId}`);
+		      console.log(`Early bird 2X applied to ${purchase.planId}`);
 		    }
 		  }
 		
@@ -148,7 +148,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			if (multiplier === 2) {
 			  const badge = document.createElement("div");
 			  badge.innerText = "2x";
-			  badge.className = "plan-badge-2x";
+			  badge.className = "plan-badge-5x";
 			  planContainer.style.position = "relative";
 			  planContainer.appendChild(badge);
 			}
