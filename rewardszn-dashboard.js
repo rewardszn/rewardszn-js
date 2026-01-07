@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Calculate the start date (7:00 PM on Sept 11)
     const windowStartDate = new Date(targetDate);
-    windowStartDate.setDate(targetDate.getDate() - 6); // Subtract 7 days
+    windowStartDate.setDate(targetDate.getDate() - 7); // Subtract 7 days
     windowStartDate.setHours(19, 0, 0, 0); // Set to 7:00 PM on Sept 11
     console.log("Window start date:", windowStartDate);
 
